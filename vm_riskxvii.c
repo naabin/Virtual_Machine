@@ -39,10 +39,11 @@ uint8_t sext(uint32_t n, int b) {
 
 
 int main(int argc, char* argv[]) {
-    // if (argc < 2) {
-    //     return 1;
-    // }
-    FILE *file = fopen("./examples/5_sum/5_sum.mi", "rb");
+    if (argc < 2) {
+        return 1;
+    }
+    // FILE *file = fopen("./examples/5_sum/5_sum.mi", "rb");
+    FILE * file = fopen(argv[1], "rb");
     fseek(file, 0L, SEEK_END);
     int size = ftell(file);
     fseek(file, 0L, SEEK_SET);
@@ -212,19 +213,19 @@ int main(int argc, char* argv[]) {
                     }
                     case 0x0804:
                     {
-                        fprintf(stdout, "%d\n", mem[reg[rs1] + imm_s]);
+                        fprintf(stdout, "%d", mem[reg[rs1] + imm_s]);
                         break;
                     }
                     case 0x816:
                     {
-                        fprintf(stdout,"%d\n", mem[reg[rs1] + imm_s]);
+                        fprintf(stdout,"%d", mem[reg[rs1] + imm_s]);
                         break;
                     }
                     case 0x0812:
                         // char c = read_character();
                         break;
                     case 0x80c:
-                        fprintf(stdout, "CPU Halt requested\n");
+                        fprintf(stdout, "CPU Halt Requested\n");
                         running = 0;
                         break;
                     default:
