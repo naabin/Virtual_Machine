@@ -3,8 +3,6 @@
 #include <string.h>
 #include <stdint.h>
 
-#include "operations.h"
-
 #define INST_MEM_SIZE 1024
 #define DATA_MEM_SIZE 1024
 
