@@ -21,7 +21,7 @@ build/
 !*.txt
 !*.md
 !*.sh
-
+.vscode
 !.gitignore
 
 # Don't ignore anything in the tests folder.
